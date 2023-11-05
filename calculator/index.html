@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    <form action="login.php">
+        <label for="fnumber">First Number : </label>
+        <input type="text" name="fnumber" id="fnumber"> <br> <br><br><br>
+        
+        <label for="snumber">Second Number : </label>
+        <input type="text" name="snumber" id="snumber"> <br> <br><br><br>
+        <select name="op" id="op">
+            <option value="+" id="+">+</option>
+            <option value="-" id="-">-</option>
+            <option value="*" id="*">x</option>
+            <option value="/" id="/">/</option>
+        </select> <br><br><br>
+        <input type="button" value="=" onclick="calculate()">
+    </form>
+
+    <p id="ans"></p>
+
+    <script>
+        var fnum = document.getElementById("fnumber");
+        var snum = document.getElementById("snumber");
+
+        var operator = document.getElementById("op");
+
+
+        function calculate(){
+            if(operator.value == "+") {
+                document.getElementById("ans").innerHTML = parseInt(fnum.value) + parseInt(snum.value);
+            } else if(operator.value == "-") {
+                document.getElementById("ans").innerHTML = parseInt(fnum.value) - parseInt(snum.value);
+            } else if(operator.value == "*") {
+                document.getElementById("ans").innerHTML = parseInt(fnum.value) * parseInt(snum.value);
+            } else if(operator.value == "/") {
+                document.getElementById("ans").innerHTML = parseInt(fnum.value) / parseInt(snum.value);
+            } else {
+                document.getElementById("ans").innerHTML = "Invalid Input";
+            }
+        }
+
+    </script>
+</body>
+</html>
